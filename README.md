@@ -100,13 +100,27 @@ Supported variants: `'bars'`, `'icon'`, `'text'`, `'emoji'`, `'lucide'`.
 }
 ```
 
-### `<WifiSignalIndicator />` Props
+### 🎛️ WifiSignalIndicator Component
 
-| Prop        | Type      | Default | Description                          |
-|-------------|-----------|---------|--------------------------------------|
-| `variant`   | `'bars'   | 'icon'  | 'text'                               | 'emoji' | 'lucide'` | `'bars'` | Visual style of the indicator                    |
-| `showLabel` | `boolean` | `false` | Whether to show textual status label |
-| `size`      | `number`  | `20`    | Icon size in pixels                  |
+A signal strength display component with 5 variant styles.
+
+### Props
+
+| Prop              | Type      | Default  | Description                      |
+|-------------------|-----------|----------|----------------------------------|
+| `variant`         | `'bars'   | 'icon'   | 'emoji'                          | 'text' | 'lucide'` | `"bars"`   | Visual display type                    |
+| `size`            | `number`  | `20`     | Icon size (for Lucide only)      |
+| `showLabel`       | `boolean` | `false`  | Display connectivity status text |
+| `showLatency`     | `boolean` | `false`  | Display latency in milliseconds  |
+| `latencyPosition` | `'top'    | 'bottom' | 'left'                           | 'right'`              | `"bottom"` | Where to place latency text            |
+
+### Examples
+
+```tsx
+<WifiSignalIndicator variant="emoji" showLabel showLatency/>
+<WifiSignalIndicator variant="lucide" showLabel showLatency size={28}/>
+<WifiSignalIndicator variant="text"/>
+```
 
 ---
 

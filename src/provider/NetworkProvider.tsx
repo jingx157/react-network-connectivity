@@ -36,7 +36,7 @@ interface NetworkProviderProps {
 
 export const NetworkProvider: React.FC<NetworkProviderProps> = ({
                                                                     children,
-                                                                    pingUrl,
+                                                                    pingUrl = "https://www.google.com/generate_204",
                                                                     pingIntervalMs = 15000,
                                                                     timeoutMs = 3000,
                                                                     backoff = true,
@@ -51,7 +51,8 @@ export const NetworkProvider: React.FC<NetworkProviderProps> = ({
     const [lastSuccessAt, setLastSuccessAt] = useState<Date | null>(null);
     const [error, setError] = useState<string>();
     const retryCountRef = useRef(0);
-    const backoffTimeoutRef = useRef<NodeJS.Timeout>(null);
+    const backoffTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
 
     const isOnline = status === 'online' || status === 'unstable';
 
