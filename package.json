@@ -1,0 +1,36 @@
+{
+  "name": "react-network-connectivity",
+  "version": "1.0.0",
+  "description": "Advanced React network connectivity status package with hooks, provider, and visual indicators",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "network",
+    "connectivity",
+    "offline",
+    "hook",
+    "ping",
+    "status"
+  ],
+  "author": "Jingx <chingc035@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0 || || ^19.0.0 || ^20.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^0.268.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4",
+    "@types/react": "^19.1.8",
+    "typescript": "^5.0.0"
+  }
+}
